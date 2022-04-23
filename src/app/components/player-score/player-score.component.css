@@ -1,0 +1,33 @@
+.backButton button {
+  font-family: 'Monoton', cursive;
+  border: none;
+  background-color: transparent;
+  font-size: 40px;
+  padding: 15px;
+  cursor: pointer;
+  position: absolute;
+  top: 80%;
+}
+
+.List {
+  font-family: 'Monoton', cursive;
+  border: none;
+  background-color: transparent;
+  font-size: 15px;
+  padding: 15px;
+}
+
+.selectList {
+  text-align: center;
+}
+
+.togglebutton {
+  font-family: 'Monoton', cursive;
+  border: none;
+  background-color: transparent;
+  font-size: 25px;
+  padding: 15px;
+  cursor: pointer;
+  position: absolute;
+  left: 70%;
+}

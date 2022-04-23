@@ -1,0 +1,31 @@
+.scoreWrapper{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.resultPass{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 300px 300px;
+    align-items: center;
+    text-align: right;
+    color: whitesmoke;
+    font-family: 'Bangers', cursive;
+    mix-blend-mode:screen;
+    font-size: 45px;
+    button{
+        margin-top: 20px;
+        font-size: 16px;
+    }
+    button:hover{
+        transform: scale(1.05);
+    }
+    button:active{
+        transform: scale(1);
+    }
+    p:nth-child(odd){
+        text-align: left;
+    }
+}

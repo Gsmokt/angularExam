@@ -1,0 +1,15 @@
+.actionButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: none;
+  background-color: transparent;
+}
+
+.action {
+  font-family: 'Monoton', cursive;
+  border: none;
+  background-color: transparent;
+  font-size: 25px;
+  padding: 15px;
+  cursor: pointer;
+}

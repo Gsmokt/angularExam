@@ -1,0 +1,15 @@
+<span>Snake Game</span>
+<form #form="ngForm" (ngSubmit)="submit(form.form)" autocomplete="off">
+    <label for="playerName" >Player name: <p [style]="{'color':'darkgreen','font-size':'20px'}" *ngIf="username.invalid">Enter your player name</p></label>
+    <input [style]="{'color':username.valid?'green':'red'}" maxlength="23" id="playerName" type="search" name = "name" ngModel #username="ngModel" [pattern]="usernamePattern" required>
+    <i>(letters and numbers only, no punctuation or special characters)</i>
+    <label for="playerEmail">Token:<p [style]="{'color':'darkgreen','font-size':'20px'}" *ngIf="token.invalid">Enter your token</p></label>
+    <input [style]="{'color':'green'}" id="playerEmail" type="password" name="token" ngModel #token="ngModel"required>
+    <div>
+        <select [(ngModel)]="color" name="color" > 
+        <option *ngFor="let opt of colors"
+                [value]="opt">{{opt}}
+        </option>
+    </select></div>
+    <div><button [style]="{'cursor':!form.valid?'not-allowed':'pointer'}" [disabled]="!form.valid" type="submit">Go !!!!!</button></div>
+</form>

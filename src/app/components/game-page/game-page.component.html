@@ -1,0 +1,51 @@
+<div class="view">
+
+
+    <div class="game"> 
+        <div class="points"><app-game-score [points]="points"></app-game-score></div>
+        <div class="time">
+            <p>Time play: {{hours +": h"}}, {{minutes +": m"}}, {{timer +": s"}}</p>
+           <div>
+               <button class="scoreListButton" (click)="checkGlobalList()" ><pre class="scoreListButton" >Global Score</pre></button>/
+               <button class="scoreListButton" (click)="checkPlayerList()" ><pre class="scoreListButton"  >Player Score</pre></button>
+           </div> 
+        </div>
+        <div class="playerName"><p>Hello,</p>{{name+"!"}}</div>
+        <div class="snake">
+            <div>
+                <select [(ngModel)]="color" name="color" > 
+                <option *ngFor="let opt of colors"
+                        [value]="opt">{{opt}}
+                </option>
+            </select></div>
+            <ngx-snake [ngClass]="color === 'sepia' ? 'black-and-white' : 'free'" #game (foodEaten)="onGrow()" (gameOver)="onGameOver()"></ngx-snake>
+        </div>
+   
+        <div class="buttons">
+            <div>
+             <app-navigation (setTimer)="setTimer()" 
+                            (clearTimer)="clearTimer()" 
+                            (clearAll)="clearAll()" 
+                            [game]="game"
+                            [disableStart]="disableStart"
+                            [disablePause]="disablePause"
+                            ></app-navigation>
+            </div>
+
+            <div>
+             <app-controller [status]="status"  [game]="game"></app-controller>
+            </div>
+
+        </div>
+
+        <div class="backButton"><button (click)="goBack()">Go back!</button></div>
+        
+        <div class="gameplayHistory">
+                <button class="action" (click)="gameplay()">Gameplay history</button>
+        </div>
+
+        <div class="gameplayList" *ngIf="gameplayHistory">
+            <app-gameplay-history [gameplay]="actionGained"></app-gameplay-history>
+        </div>
+    </div>
+</div>

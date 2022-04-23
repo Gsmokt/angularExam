@@ -1,0 +1,5 @@
+<button class="togglebutton" (click)="sortToggle()" >Sort by score</button>
+<div class="selectList" *ngFor="let user of data | filterPlayer : name | sortUsers | slice | sortSliceUsers : sort">
+    <div class="List" >{{user.name}} : {{user.score}}</div>
+</div>
+<div class="backButton"><button (click)="goB()">Go back!</button></div>

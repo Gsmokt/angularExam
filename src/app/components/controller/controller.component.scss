@@ -1,0 +1,66 @@
+.status{
+    grid-area: status;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Monoton', cursive;
+    border: none;
+    font-size: 12px; 
+    max-width: 60px;
+}
+.arrow-top{
+    grid-area: top;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 30px 30px 30px;
+    border-color: transparent transparent LightYellow transparent;
+    background-color:transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.arrow-left {
+    grid-area: left;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 30px 30px 30px 0;
+    border-color: transparent LightYellow transparent transparent;
+    background-color:transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.arrow-right{
+    grid-area: right;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 30px 0 30px 30px;
+    border-color: transparent transparent transparent LightYellow;
+    background-color:transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.arrow-bottom{
+    grid-area: bottom;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 30px 30px 0 30px;
+    border-color: LightYellow transparent transparent transparent;
+    background-color:transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.arrowButtons{
+    background-color:transparent;
+    display: grid;
+    justify-content: center;
+    align-self: start;
+    grid-gap: 5px;
+    grid-template-areas: 
+    ". top ."
+    "left status right"
+    ". bottom . ";
+}

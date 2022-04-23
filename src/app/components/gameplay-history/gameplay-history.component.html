@@ -1,0 +1,11 @@
+
+<div class="select">
+    <select [(ngModel)]="filt" >
+    <option *ngFor="let opt of option"
+            [value]="opt">{{opt}}
+    </option>
+</select> <div><button (click)="sortByDate()">Sort by date</button></div>
+</div>
+<div class="selected" *ngFor='let item of gameplay | filter:filt | sort:sortList'>
+<div class="itemList">{{item.actionName}} : {{item.score?item.score:item.timeStamp}}</div>
+</div>

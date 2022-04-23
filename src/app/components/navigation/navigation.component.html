@@ -1,0 +1,5 @@
+<div class="actionButtons">
+    <button [disabled]="!disableStart" class="action" (click)="game.actionStart()" (click)="set()">Start</button>
+    <button [disabled]="disablePause" class="action" (click)="game.actionStop()" (click)="clear()">Stop</button>
+    <button class="action" (click)="game.actionReset()" (click)="clearall()">Reset</button>
+</div>
