@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {NgxSnakeModule} from 'ngx-snake';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -49,7 +49,8 @@ import { FilterPlayerPipe } from './filter-player.pipe';
     AppRoutingModule,
     FormsModule,
     NgxSnakeModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [MyServiceService],
   bootstrap: [AppComponent]
