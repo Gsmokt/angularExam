@@ -16,7 +16,7 @@ export class IntroPageComponent implements OnInit {
   public usernamePattern = "^[A-Za-z0-9_-]{8,15}$";
   ngForm = this.fb.group({
     name: ['', [Validators.required, Validators.pattern(this.usernamePattern)]],
-    token: ['', [Validators.required]],
+    token: ['', [Validators.required, Validators.minLength(4)]],
     colorName: [this.color]
   });
   submit(form: FormGroup){
@@ -25,9 +25,8 @@ export class IntroPageComponent implements OnInit {
     if(form.valid){
       this.MyService.setName(name);
       this.MyService.setToken(token);
-      this.MyService.sendToken(token);
+      this.MyService.sendToken(token, this.color);
       console.log('Logged in');
-      this._router.navigate(['/game', this.color]);
     }else{
       console.log('Not logged in');
     };

@@ -3,7 +3,7 @@
     <label for="playerName" >Player name: <p [style]="{'color':ngForm.get('name')?.invalid ? 'red' : 'darkgreen','font-size':'20px'}">Enter your player name</p></label>
     <input id="playerName" [style]="{'color': ngForm.get('name')?.valid ?'green':'red'}" type="search" formControlName="name">
     <i>(letters and numbers only, no punctuation or special characters)</i>
-    <label for="playerEmail">Token:<p [style]="{'color':ngForm.get('name')?.invalid ? 'red' : 'darkgreen','font-size':'20px'}">Enter your token</p></label>
+    <label for="playerEmail">Token:<p [style]="{'color':ngForm.get('token')?.invalid ? 'red' : 'darkgreen','font-size':'20px'}">Enter your token</p></label>
     <input id="playerEmail" [style]="{'color':'green'}"  type="password" formControlName="token">
     <div>
         <select formControlName="colorName" 

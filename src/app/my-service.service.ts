@@ -10,6 +10,10 @@ export interface User{
   score: number
 }
 
+interface Token {
+  success: boolean
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -43,7 +47,7 @@ export class MyServiceService {
   setToken(item: string|number){
     this.token = item;
   }
-  sendToken(data:string|number){
+  sendToken(data:string|number, color:string){
     const headers = new HttpHeaders({
       Authorization: 'Bearer '+this.token,
       'Accept': 'application/json',
@@ -54,7 +58,7 @@ export class MyServiceService {
     };
     const options = { headers };
     const URL = 'http://localhost:4700/check-token';
-    return this._http.post(URL,body, options).toPromise().then((data) => console.log(data))
+    return this._http.post(URL,body, options).toPromise().then(_ => this._router.navigate(['/game', color])).catch(_ => alert('Bad token'));
   }
   sendPlayerData(){
     const headers = new HttpHeaders({ Authorization: 'Bearer ' + this.token,
@@ -66,6 +70,6 @@ export class MyServiceService {
   }
   const options = { headers };
     const URL = 'http://localhost:4700/scores';
-    return this._http.post(URL,body, options).toPromise().then((data) => console.log(data));
+    return this._http.post(URL,body, options).toPromise().then((_) => alert('Got it')).catch(_ => alert('Bad token'));
   }
 }

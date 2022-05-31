@@ -15,8 +15,7 @@ export class PlayerDataGuardGuard implements CanActivate {
     if(this.MyService.name){
       return true;
     }else {
-      this._router.navigate(['/']);
-      return false;
+      return this._router.createUrlTree(['/']);
     }
   }
 }
